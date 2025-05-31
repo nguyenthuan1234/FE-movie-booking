@@ -1,0 +1,150 @@
+.cinestar-banner {
+  background-color:#0B1320;
+  width: 100%;
+  height: 432px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button.carousel-control.right {
+    margin-right: 15%;
+}
+button.carousel-control.left {
+    margin-left: 15%;
+}
+
+  .carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;  // Thêm để khi hover thấy pointer
+
+  &.left {
+    left: 1rem;
+  }
+
+  &.right {
+    right: 1rem;
+  }
+
+  // Có thể thêm vùng padding để dễ bấm hơn
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #facc15;  // đổi màu khi hover cho nổi bật
+  }
+}
+  
+
+  // 👉 Thêm dòng này để banner không bị che bởi header
+  margin-top: 140px;
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: none;
+    border: none;
+
+    &.left {
+      left: 1rem;
+    }
+
+    &.right {
+      right: 1rem;
+    }
+  }
+
+  .banner-content {
+    margin: 0 22%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 96rem;
+    padding: 1.5rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .text-section {
+      text-align: center;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+
+      h2 {
+        font-size: 2.25rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-style: italic;
+        color: white;
+        margin-top: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        color: #7e22ce;
+        font-weight: bold;
+        border-radius: 0.25rem;
+      }
+
+      h3 {
+        margin-top: 1rem;
+        font-size: 1.875rem;
+        font-weight: 800;
+        color: #facc15;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    .image-section {
+      position: relative;
+      margin-top: 2rem;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+
+      .theater-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .btn-wrapper {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .book-button {
+          background-color: #facc15;
+          color: black;
+          font-weight: bold;
+
+          &:hover {
+            background-color: #fde047;
+          }
+        }
+      }
+    }
+  }
+}

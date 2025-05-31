@@ -1,0 +1,74 @@
+.quick-booking {
+  margin: 2% 11% 0 13%;
+  max-width: 95%;
+  display: flex;
+  flex-wrap: nowrap; // 🧷 Giữ các phần tử nằm trên 1 dòng
+  align-items: center;
+  gap: 11px;
+  padding: 16px 24px;
+  background: #eef1ff;
+  border-radius: 12px;
+  overflow-x: hidden;
+
+  .title {
+    white-space: nowrap;
+    font-weight: 900;
+    font-size: 22px;
+    color: #333;
+    font-family: 'Anton', sans-serif;
+    margin-right: 20px;
+  }
+
+  .dropdown {
+    padding: 10px 16px;
+    width: auto; // ✅ Không để rộng 100%
+    min-width: 180px;
+    border: 2px solid #d0d0f0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a2aa5;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:disabled {
+      color: #999;
+      background-color: #f3f3f3;
+      cursor: not-allowed;
+    }
+  }
+
+  .book-button {
+    background-color: #5a2aa5;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Anton', sans-serif;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #462183;
+    }
+  }
+}
+.now-showing {
+  background: linear-gradient(to right,#0B1320, #0B1320);
+  text-align: center;
+  padding: 20px 0;
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+}

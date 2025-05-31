@@ -1,62 +1,68 @@
+import React from "react";
+import { Search, User } from "lucide-react";
+import '../types/Header.scss';
+import { IoLogoReact } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
-import { FaUserCircle } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Header() {
     return (
-        <header className="bg-[#0B1121] text-white px-6 py-3">
-            <div className="flex items-center justify-between">
-                {/* Logo */}
-                <div className="flex items-center gap-4">
-                    <img src="/logo.png" alt="Cinestar Logo" className="h-10" />
+        <div className="header-container">
+            <div className="header-top">
+                <div className="header-left">
+                    <IoLogoReact className="lg-react" />
+                    <button className="btn-yellow">🎟 ĐẶT VÉ NGAY</button>
+                    <button className="btn-purple">🍿 ĐẶT BẮP NƯỚC</button>
                 </div>
 
-                {/* Booking buttons */}
-                <div className="flex gap-2">
-                    <button className="bg-yellow-400 text-black font-bold hover:bg-yellow-300 px-4 py-2 rounded">
-                        ĐẶT VÉ NGAY
-                    </button>
-                    <button className="bg-purple-600 text-white font-bold hover:bg-purple-500 px-4 py-2 rounded">
-                        ĐẶT BẮP NƯỚC
-                    </button>
+                <div className="header-search">
+                    <input type="text" placeholder="Tìm phim, rạp" />
+                    <Search size={16} className="search-icon" />
                 </div>
 
-                {/* Search bar */}
-                <div className="relative w-1/3">
-                    <input
-                        type="text"
-                        placeholder="Tìm phim, rạp"
-                        className="rounded-full pl-4 pr-10 py-2 bg-white text-black w-full"
-                    />
-                    <FaSearch className="absolute right-3 top-2.5 text-gray-500" />
-                </div>
-
-                {/* Login and language */}
-                <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                        <FaUserCircle />
+                <div className="header-right">
+                    <NavLink to={"/login"} className="login">
+                        <User size={16} />
                         <span>Đăng nhập</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                        <span>🇻🇳</span>
-                        <span>VN</span>
+                    </NavLink>
+                    <div className="language">
+                        <span className="star">★</span>
+                        <span className="vn">VN ▾</span>
                     </div>
                 </div>
             </div>
+            <hr />
 
-            {/* Secondary navigation */}
-            <nav className="mt-3 flex gap-6 text-sm">
-                <div className="flex items-center gap-1">
-                    <FaMapMarkerAlt />
-                    <span>Chọn rạp</span>
+
+            {/* Bottom Nav */}
+            <div className="header-bottom">
+                <div className="ci-sh">
+                    <div className="cinema-dropdown">
+                        <div className="cinema-title">📍 Chọn rạp</div>
+                        <div className="cinema-menu">
+                            <div>Cinestar Quốc Thanh (TP.HCM)</div>
+                            <div>Cinestar Satra Quận 6 (TP.HCM)</div>
+                            <div>Cinestar Hai Bà Trưng (TP.HCM)</div>
+                            <div>Cinestar Sinh Viên (Bình Dương)</div>
+                            <div>Cinestar Huế (TP. Huế)</div>
+                            <div>Cinestar Đà Lạt (TP. Đà Lạt)</div>
+                            <div>Cinestar Lâm Đồng (Đức Trọng)</div>
+                            <div>Cinestar Mỹ Tho (Tiền Giang)</div>
+                            <div>Cinestar Kiên Giang (Rạch Sỏi)</div>
+                        </div>
+                    </div>
+                    <div className="show-schedule">📍 Lịch chiếu</div>
                 </div>
-                <span>Lịch chiếu</span>
-                <span>Khuyến mãi</span>
-                <span>Thuê sự kiện</span>
-                <span>Tất cả các giải trí</span>
-                <span>Giới thiệu</span>
-            </nav>
-        </header>
+
+
+                <div className="cinema-menu-left">
+                    <div>Khuyến mãi</div>
+                    <div>Thuê sự kiện</div>
+                    <div>Tất cả các giải trí</div>
+                    <div>Giới thiệu</div>
+                </div>
+            </div>
+
+        </div>
     );
 }
